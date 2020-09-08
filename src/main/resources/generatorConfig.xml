@@ -70,13 +70,21 @@
 
 
         <table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="passage" domainObjectName="Passage" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <columnOverride column="content" jdbcType="VARCHAR" />
-        </table>
-        <table tableName="island" domainObjectName="Island" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="dynamics" domainObjectName="Dynamics" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <columnOverride column="images" jdbcType="VARCHAR" />
-        </table>
+
+        <table tableName="role" domainObjectName="Role" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="menu" domainObjectName="Menu" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="role_menu" domainObjectName="RoleMenu" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+
+        <!--        <table tableName="passage" domainObjectName="Passage" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            <columnOverride column="content" jdbcType="VARCHAR" />-->
+<!--        </table>-->
+<!--        <table tableName="island" domainObjectName="Island" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+<!--        <table tableName="dynamics" domainObjectName="Dynamics" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            <columnOverride column="images" jdbcType="VARCHAR" />-->
+<!--        </table>-->
 
         <!-- geelynote mybatis插件的搭建 -->
     </context>

@@ -1,8 +1,5 @@
 package com.pojo;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class User {
     private Integer id;
 
@@ -16,13 +13,16 @@ public class User {
 
     private String signature;
 
-    public User(Integer id, String username, String password, String phone, String header, String signature) {
+    private Integer roleId;
+
+    public User(Integer id, String username, String password, String phone, String header, String signature, Integer roleId) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.phone = phone;
         this.header = header;
         this.signature = signature;
+        this.roleId = roleId;
     }
 
     public User() {
@@ -75,5 +75,13 @@ public class User {
 
     public void setSignature(String signature) {
         this.signature = signature == null ? null : signature.trim();
+    }
+
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 }
