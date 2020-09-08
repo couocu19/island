@@ -63,23 +63,7 @@ public class UserController {
         return "ok";
     }
 
-//    public Map<String,Object> updateInfo(HttpSession httpSession,User user){
-//        Map<String,Object> map=  new HashMap<>();
-//        User currentUser = (User)httpSession.getAttribute("currentUser");
-//        if(currentUser == null){
-//            map.put("msg","当前用户未登录~");
-//            return map;
-//        }
-//        //用户的id不可修改
-//
-//    }
 
-
-
-//    public Map<String,Object> loginByPhoneNumber(String memPhone,String code){
-//
-//
-//    }
 
 
 }

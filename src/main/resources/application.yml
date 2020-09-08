@@ -14,3 +14,9 @@ upload:
     access-key: U7iuJHsq5knZMU22Bd8JR11GpOcS7Z0i4ma3n5RM
     secret-key: IsRk8WjvituvSf6eER2HcxGgAPgJIlw2rP-Ld-pU
     bucket: bearchu
+
+
+jwt:
+  secret: xcoucouisabeautifulgirl
+  expiration: 3600000
+  header: JWTHeaderName #http请求头中的key

@@ -3,7 +3,10 @@ package com.config;
 
 import com.service.impl.SelfUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -57,6 +60,7 @@ public class SpringSecurityConf extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
 
                 .anyRequest()
+
                 .access("@rbacauthorityservice.hasPermission(request,authentication)") // RBAC 动态 url 认证
 
                 .and()
@@ -70,6 +74,8 @@ public class SpringSecurityConf extends WebSecurityConfigurerAdapter {
                 .logoutSuccessHandler(logoutSuccessHandler)
                 .permitAll();
 
+
+                         
         // 记住我
         http.rememberMe().rememberMeParameter("remember-me")
                 .userDetailsService(userDetailsService).tokenValiditySeconds(300);
@@ -78,5 +84,15 @@ public class SpringSecurityConf extends WebSecurityConfigurerAdapter {
         http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class); // JWT Filter
 
     }
+
+
+    @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
+    public AuthenticationManager authenticationManagerBean() throws Exception{
+
+        return super.authenticationManagerBean();
+
+
+    }
+
 }
 

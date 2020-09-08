@@ -9,12 +9,18 @@ import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.util.Date;
+import java.util.Map;
 
+//用来生成token令牌
 public class JwtTokenUtil {
 
     private static InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("jwt.jks"); // 寻找证书文件
     private static PrivateKey privateKey = null;
     private static PublicKey publicKey = null;
+
+
+
+
 
     static { // 将证书文件里边的私钥公钥拿出来
         try {
@@ -36,6 +42,8 @@ public class JwtTokenUtil {
                 .signWith(SignatureAlgorithm.RS256, privateKey)
                 .compact();
     }
+
+
 
     public static String parseToken(String token, String salt) {
         String subject = null;
